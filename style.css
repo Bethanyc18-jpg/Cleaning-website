@@ -278,8 +278,9 @@ section p.intro {
     gap: 28px;
   }
   .about-photo {
-    aspect-ratio: 1/1;
-    max-width: 280px;
+    width: 100%;
+    /* Keep the tighter desktop-style crop on smaller screens. */
+    aspect-ratio: 1 / 1;
     margin: 0 auto;
   }
 
