@@ -100,7 +100,8 @@ nav.wrap {
   line-height: 1;
   white-space: nowrap;
 }
-.monogram::after {
+.monogram::after,
+.services h2::after {
   content: "";
   position: absolute;
   left: 4%;
@@ -221,7 +222,46 @@ section p.intro {
 
 /* Services */
 .services {
-  border-top: 1px solid var(--line);
+  --grey: #3d372f;
+  --grey-soft: #51483e;
+  --line: #cbbba5;
+  padding: 64px 0;
+  /* Reserve the lower-right product area so it never sits behind copy. */
+  padding-bottom: max(140px, 32vw);
+  position: relative;
+  isolation: isolate;
+  background: #e3d7c9;
+}
+.services::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    linear-gradient(rgba(251, 247, 241, 0.3), rgba(251, 247, 241, 0.3)),
+    url("assets/white-cleaning-products-v3.png") center / cover no-repeat;
+  /* Hide the photo's wall behind the copy, preserving the products below. */
+  -webkit-mask-image: linear-gradient(to bottom, transparent 48%, #000 56%);
+  mask-image: linear-gradient(to bottom, transparent 48%, #000 56%);
+}
+.services h2 {
+  color: var(--rose-deep);
+  position: relative;
+  width: fit-content;
+  padding-bottom: 5px;
+}
+.services h2::after {
+  left: 0;
+  right: 0;
+}
+@media (min-width: 701px) {
+  .services h2 {
+    margin-bottom: 44px;
+  }
 }
 .service-row {
   display: grid;
@@ -230,11 +270,11 @@ section p.intro {
   padding: 34px 0;
   border-bottom: 1px solid var(--line);
 }
-.service-row h3 {
+.services h3 {
   font-size: 1.4rem;
 }
 .service-row p {
-  color: var(--grey-soft);
+  color: #241b14;
   max-width: 48ch;
 }
 @media (max-width: 700px) {
@@ -249,7 +289,7 @@ section p.intro {
   grid-template-columns: 1fr 1.3fr;
   gap: 48px;
   align-items: stretch;
-  margin-bottom: 56px;
+  margin-bottom: 80px;
 }
 .about-photo {
   background:
@@ -341,6 +381,11 @@ section p.intro {
   background: var(--nude-soft);
   border-radius: 28px;
   padding: 56px 48px;
+}
+.why h2 {
+  font-weight: 700;
+  color: var(--rose-deep);
+  margin-bottom: 28px;
 }
 .why-grid {
   display: grid;
