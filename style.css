@@ -225,7 +225,7 @@ section p.intro {
   --grey: #3d372f;
   --grey-soft: #51483e;
   --line: #cbbba5;
-  padding: 64px 0;
+  padding: 50px 0;
   /* Reserve the lower-right product area so it never sits behind copy. */
   padding-bottom: max(140px, 32vw);
   position: relative;
@@ -277,9 +277,17 @@ section p.intro {
   color: #241b14;
   max-width: 48ch;
 }
+.service-font {
+  font-size: 20px;
+}
+
 @media (max-width: 700px) {
   .service-row {
     grid-template-columns: 1fr;
+  }
+
+  .service-font {
+    font-size: 16px;
   }
 }
 
@@ -414,6 +422,13 @@ section p.intro {
 }
 
 /* Testimonials */
+.title {
+  font-family: "Fraunces", serif;
+  font-weight: 500;
+  color: #ad8567;
+  line-height: 1.15;
+}
+
 .quotes {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -443,7 +458,7 @@ cite {
 
 /* Contact / footer */
 footer {
-  background: var(--grey);
+  background: var(--nude-soft);
   color: var(--nude-soft);
   padding: 72px 0 40px;
 }
@@ -452,15 +467,15 @@ footer {
   grid-template-columns: 1.3fr 1fr 1fr;
   gap: 40px;
   padding-bottom: 44px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+  border-bottom: 1px solid #8c6a50;
 }
 footer h2 {
-  color: var(--white);
+  color: #8c6a50;
   font-size: 2rem;
   max-width: 12ch;
 }
 footer .foot-lead {
-  color: #cbb9ae;
+  color: black;
   margin-top: 14px;
   max-width: 36ch;
 }
@@ -479,7 +494,7 @@ footer .foot-col p {
   display: block;
   margin-bottom: 9px;
   font-size: 0.95rem;
-  color: var(--nude-soft);
+  color: black;
 }
 footer .foot-col a:hover {
   color: var(--pink);
@@ -513,10 +528,10 @@ footer .foot-col a:hover {
     color: var(--grey);
   }
   header {
-    background: rgba(33, 30, 28, 0.9);
+    background: var(--nude-soft);
   }
 }
-:root[data-theme="dark"] {
+:root[data-theme="light"] {
   --white: #211e1c;
   --nude-soft: #2c2723;
   --nude: #3a3129;
